@@ -1,0 +1,37 @@
+body {
+  background: #2c2f33;
+}
+
+
+#days h2 {
+  position:fixed;
+  top:20px;
+  left: 40px;
+}
+
+#days h1 {
+  position:fixed;
+  top:20px;
+  left: 20px;
+  border: solid black 1px;
+  width: 45px;
+  height: 25px;
+  /* border-radius: 10px; */
+  font-size: 15px;
+  /* top: 20px; */
+  margin-top: 5px;
+  background: #7289da;
+  padding: 15px;
+}
+
+#content {
+  position:fixed;
+  top: 85px;
+  left:20px;
+  border: solid black 2px;
+  width: 125px;
+  /* border-radius: 10px; */
+  margin-top: 20px auto;
+  background: #7289da;
+  padding: 15px;
+}
