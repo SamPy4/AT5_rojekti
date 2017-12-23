@@ -5,7 +5,7 @@
   include 'functions.php';
   include 'mySQL_func.php';
 
-  $date_today = "2017-12-13"; //date("Y-m-d");
+  $date_today = date("Y-m-d");
 
   list($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe) = def_days();  // Luo viikonpäivä muuttujille päivämäärät
 
@@ -70,6 +70,24 @@
          <?php echo $pe_ruoka ?>
        </p5>
 
+   </div>
+
+   <div id="pvm_texts">
+     <p1>
+       <?php echo $pvm_ma ?>
+     </p1>
+     <p2>
+       <?php echo $pvm_ti ?>
+     </p2>
+     <p3>
+       <?php echo $pvm_ke ?>
+     </p3>
+     <p4>
+       <?php echo $pvm_to ?>
+     </p4>
+     <p5>
+       <?php echo $pvm_pe ?>
+     </p5>
    </div>
 
  </body>
