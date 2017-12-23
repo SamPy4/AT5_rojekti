@@ -2,25 +2,14 @@
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
-
-  // Server connect and Database selection
-  $mysql_server = "localhost";
-  $mysql_db     = "projekti_tyo";
-  $mysql_user   = "root";
-  $mysql_pass   = "root";
-  $link = mysqli_connect($mysql_server, $mysql_user, $mysql_pass, $mysql_db)
-    or die("mySQLi connection error");
+  include 'functions.php';
+  include 'mySQL_func.php';
 
   $date_today = "2017-12-13"; //date("Y-m-d");
 
-  $query  = "SELECT * FROM ruoka WHERE pvm = '$date_today' ";
-  $result = mysqli_query($link, $query);
+  list($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe) = def_days();  // Luo viikonpäivä muuttujille päivämäärät
 
-  $row    = mysqli_fetch_array($result);
-
-  #echo "Ruoka:".$row['ruoka'];
-
-  $paivan_ruoka = $row['ruoka'];
+  list($ma_ruoka, $ti_ruoka, $ke_ruoka, $to_ruoka, $pe_ruoka) = get_ruoat($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe);
 
  ?>
 
@@ -34,16 +23,53 @@
  <body>
    <div id="days">
        <h1>
+         <?php echo "MA" ?>
        </h1>
        <h2>
-         <?php echo "KE" ?>
+         <?php echo "TI" ?>
        </h2>
+       <h3>
+         <?php echo "KE" ?>
+       </h3>
+       <h4>
+         <?php echo "TO" ?>
+       </h4>
+       <h5>
+         <?php echo "PE" ?>
+       </h5>
    </div>
 
+   <div id="days_bg">
+     <h1>
+     </h1>
+     <h2>
+     </h2>
+     <h3>
+     </h3>
+     <h4>
+     </h4>
+     <h5>
+     </h5>
+   </div>
+
+
    <div id="content">
-       <p>
-         <?php echo $paivan_ruoka ?>
-       </p>
+       <p1>
+         <?php echo $ma_ruoka ?>
+       </p1>
+       <p2>
+         <?php echo $ti_ruoka ?>
+       </p2>
+       <p3>
+         <?php echo $ke_ruoka ?>
+       </p3>
+       <p4>
+         <?php echo $to_ruoka ?>
+       </p4>
+       <p5>
+         <?php echo $pe_ruoka ?>
+       </p5>
+
    </div>
 
  </body>
