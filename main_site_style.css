@@ -134,6 +134,13 @@ body {
   padding: 15px;
 }
 
+#pvm_texts p1 {    /* Määritellään päivämäätekstin paikka ja ulkonäkö */
+  position: fixed;
+  top: 65px;
+  left: 100px;
+  color: #bfbfbf;
+}
+
 /* TOINEN PÄIVÄ */
 #days_bg h2 {        /* Määritellään päivätekstin takana olevan neliön ulkonäkö */
   position:fixed;
@@ -168,6 +175,13 @@ body {
   margin-top: 20px auto;
   background: #7289da;
   padding: 15px;
+}
+
+#pvm_texts p2 {    /* Määritellään päivämäätekstin paikka ja ulkonäkö */
+  position: fixed;
+  top: 65px;
+  left: 280px;
+  color: #bfbfbf;
 }
 
 /* KOLMAS PÄIVÄ */
@@ -206,6 +220,13 @@ body {
   padding: 15px;
 }
 
+#pvm_texts p3 {    /* Määritellään päivämäätekstin paikka ja ulkonäkö */
+  position: fixed;
+  top: 65px;
+  left: 455px;
+  color: #bfbfbf;
+}
+
 /* NELJÄS PÄIVÄ */
 #days_bg h4 {        /* Määritellään päivätekstin takana olevan neliön ulkonäkö */
   position:fixed;
@@ -242,6 +263,13 @@ body {
   padding: 15px;
 }
 
+#pvm_texts p4 {    /* Määritellään päivämäätekstin paikka ja ulkonäkö */
+  position: fixed;
+  top: 65px;
+  left: 630px;
+  color: #bfbfbf;
+}
+
 /* VIIDES PÄIVÄ */
 #days_bg h5 {        /* Määritellään päivätekstin takana olevan neliön ulkonäkö */
   position:fixed;
@@ -276,4 +304,11 @@ body {
   margin-top: 20px auto;
   background: #7289da;
   padding: 15px;
+}
+
+#pvm_texts p5 {    /* Määritellään päivämäätekstin paikka ja ulkonäkö */
+  position: fixed;
+  top: 65px;
+  left: 805px;
+  color: #bfbfbf;
 }
