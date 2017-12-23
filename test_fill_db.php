@@ -1,45 +1,25 @@
 <?php
   // TÄYTTÄÄ TIETOKANNAN IRRELEVANTEILLA TESTI TEKSTEILLÄ
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
+
+  include 'functions.php';
+  include 'mySQL_func.php';
   $state = "null";
 
-  function fill_db(){
-    if (date('N') == 1) {
-      $pvm_ma = date('Y-m-d');
-      $pvm_ti = date('Y-m-d', strtotime(' +1 day'));
-      $pvm_ke = date('Y-m-d', strtotime(' +2 day'));
-      $pvm_to = date('Y-m-d', strtotime(' +3 day'));
-      $pvm_pe = date('Y-m-d', strtotime(' +4 day'));
-    }
-    elseif (date('N') == 2) {
-      $pvm_ma = date('Y-m-d', strtotime(' -1 day'));
-      $pvm_ti = date('Y-m-d');
-      $pvm_ke = date('Y-m-d', strtotime(' +1 day'));
-      $pvm_to = date('Y-m-d', strtotime(' +2 day'));
-      $pvm_pe = date('Y-m-d', strtotime(' +3 day'));
-    }
-    elseif (date('N') == 3) {
-      $pvm_ma = date('Y-m-d', strtotime(' -2 day'));
-      $pvm_ti = date('Y-m-d', strtotime(' -1 day'));
-      $pvm_ke = date('Y-m-d');
-      $pvm_to = date('Y-m-d', strtotime(' +1 day'));
-      $pvm_pe = date('Y-m-d', strtotime(' +2 day'));
-    }
-    elseif (date('N') == 4) {
-      $pvm_ma = date('Y-m-d', strtotime(' -3 day'));
-      $pvm_ti = date('Y-m-d', strtotime(' -2 day'));
-      $pvm_ke = date('Y-m-d', strtotime(' -1 day'));
-      $pvm_to = date('Y-m-d');
-      $pvm_pe = date('Y-m-d', strtotime(' +1 day'));
-    }
+  function fill_db() {
+    list($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe) = def_days();  // Luo viikonpäivä muuttujille päivämäärät
 
-    $mysql_server = "localhost";
-    $mysql_db     = "projekti_tyo";
-    $mysql_user   = "root";
-    $mysql_pass   = "root";
+    $link = connect();
 
-    $link = mysqli_connect($mysql_server, $mysql_user, $mysql_pass, $mysql_db)
-      or die("mySQLi connection error");
+    $query  = "SELECT * FROM `ruoka` WHERE pvm="0000-00-00" ";
+    mysqli_query($link, $query)
+      or die("Insertion failed");
 
+    echo $query;
+
+    if
     $query  = "INSERT INTO ruoka (`pvm`, `ruoka`, `arvostelu ruoka`, `kasvisruoka`, `arvostelu kasvisruoka`) VALUES ('$pvm_ma', 'Testibolognese','0','Testikasvisbolognese','0')";
     mysqli_query($link, $query)
       or die("Insertion failed");
@@ -61,45 +41,12 @@
       or die("Insertion failed");
 
     $state = "Database filled";
+    echo $state;
   }
 
   function empty_db() {
-    if (date('N') == 1) {
-      $pvm_ma = date('Y-m-d');
-      $pvm_ti = date('Y-m-d', strtotime(' +1 day'));
-      $pvm_ke = date('Y-m-d', strtotime(' +2 day'));
-      $pvm_to = date('Y-m-d', strtotime(' +3 day'));
-      $pvm_pe = date('Y-m-d', strtotime(' +4 day'));
-    }
-    elseif (date('N') == 2) {
-      $pvm_ma = date('Y-m-d', strtotime(' -1 day'));
-      $pvm_ti = date('Y-m-d');
-      $pvm_ke = date('Y-m-d', strtotime(' +1 day'));
-      $pvm_to = date('Y-m-d', strtotime(' +2 day'));
-      $pvm_pe = date('Y-m-d', strtotime(' +3 day'));
-    }
-    elseif (date('N') == 3) {
-      $pvm_ma = date('Y-m-d', strtotime(' -2 day'));
-      $pvm_ti = date('Y-m-d', strtotime(' -1 day'));
-      $pvm_ke = date('Y-m-d');
-      $pvm_to = date('Y-m-d', strtotime(' +1 day'));
-      $pvm_pe = date('Y-m-d', strtotime(' +2 day'));
-    }
-    elseif (date('N') == 4) {
-      $pvm_ma = date('Y-m-d', strtotime(' -3 day'));
-      $pvm_ti = date('Y-m-d', strtotime(' -2 day'));
-      $pvm_ke = date('Y-m-d', strtotime(' -1 day'));
-      $pvm_to = date('Y-m-d');
-      $pvm_pe = date('Y-m-d', strtotime(' +1 day'));
-    }
-
-    $mysql_server = "localhost";
-    $mysql_db     = "projekti_tyo";
-    $mysql_user   = "root";
-    $mysql_pass   = "root";
-
-    $link = mysqli_connect($mysql_server, $mysql_user, $mysql_pass, $mysql_db)
-      or die("mySQLi connection error");
+    list($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe) = def_days();  // Luo viikonpäivä muuttujille päivämäärät
+    $link = connect();
 
     $query  = "DELETE FROM ruoka WHERE pvm='$pvm_ma'";
     mysqli_query($link, $query)
@@ -137,6 +84,6 @@
 
    <div>
      <h1>
-        <input type="button" onclick="<?php empty_db() ?>" />
+        <input type="button" onclick="<?php fill_db() ?>" />
      </h1>
    </div>
