@@ -53,4 +53,16 @@
     $pvms = array($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe);
     return $pvms;
   }
+
+  function nextWeek($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe) {
+    $pvm_ma = date($pvm_ma, strtotime(' +7 day'));
+    $pvm_ti = date($pvm_ti, strtotime(' +7 day'));
+    $pvm_ke = date($pvm_ke, strtotime(' +7 day'));
+    $pvm_to = date($pvm_to, strtotime(' +7 day'));
+    $pvm_pe = date($pvm_pe, strtotime(' +7 day'));
+
+    $pvms = array($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe);
+    return $pvms;
+
+  }
 ?>
