@@ -28,13 +28,13 @@
     $row    = mysqli_fetch_array($result);
     $ke_ruoka = $row['ruoka'];
 
-    $result = mysqli_query($link, $query);
     $query  = "SELECT * FROM ruoka WHERE pvm =  '$pvm_to' ";
+    $result = mysqli_query($link, $query);
     $row    = mysqli_fetch_array($result);
     $to_ruoka = $row['ruoka'];
 
-    $result = mysqli_query($link, $query);
     $query  = "SELECT * FROM ruoka WHERE pvm =  '$pvm_pe' ";
+    $result = mysqli_query($link, $query);
     $row    = mysqli_fetch_array($result);
     $pe_ruoka = $row['ruoka'];
 
