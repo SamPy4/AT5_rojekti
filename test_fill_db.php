@@ -13,13 +13,11 @@
 
     $link = connect();
 
-    $query  = "SELECT * FROM `ruoka` WHERE pvm="0000-00-00" ";
-    mysqli_query($link, $query)
-      or die("Insertion failed");
+    // $query  = "SELECT * FROM `ruoka` WHERE pvm="0000-00-00" ";
+    // mysqli_query($link, $query)
+    //   or die("Insertion failed");
 
-    echo $query;
 
-    if
     $query  = "INSERT INTO ruoka (`pvm`, `ruoka`, `arvostelu ruoka`, `kasvisruoka`, `arvostelu kasvisruoka`) VALUES ('$pvm_ma', 'Testibolognese','0','Testikasvisbolognese','0')";
     mysqli_query($link, $query)
       or die("Insertion failed");
@@ -84,6 +82,6 @@
 
    <div>
      <h1>
-        <input type="button" onclick="<?php fill_db() ?>" />
+        <input type="button" onclick="<?php empty_db() ?>" />
      </h1>
    </div>
