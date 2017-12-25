@@ -312,3 +312,17 @@ body {
   left: 805px;
   color: #bfbfbf;
 }
+
+#next_week {
+  position: fixed;
+  top: 300px;
+  left: 150px;
+  color: #bfbfbf;
+}
+
+#prev_week {
+  position: fixed;
+  top: 300px;
+  left: 20px;
+  color: #bfbfbf;
+}
