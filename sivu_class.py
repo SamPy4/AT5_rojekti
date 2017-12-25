@@ -5,7 +5,7 @@ import PyPDF2#, fetch_pdf
 
 class sivu():
     def __init__(self, sivuIndex):
-        self.ruokaListaORG = open("ruokalista.pdf", "rb")
+        self.ruokaListaORG = open("ruokalista2.pdf", "rb")
         self.reader  = PyPDF2.PdfFileReader(self.ruokaListaORG)
         self.sivu  =  self.reader.getPage(sivuIndex)
 
@@ -70,6 +70,7 @@ class sivu():
     def getSivunPaivat(self):
         ind = 0
         string = ""
+        vko = ""
         text = self.sivunSisalto
 
         for i in range(53):
@@ -79,6 +80,15 @@ class sivu():
                 vko = str(i)
             except:
                 pass
+
+        if ind == 0:
+            for i in range(53):
+                finding = "VK"
+                try:
+                    ind = text.index(finding)
+                    vko = "213"
+                except:
+                    pass
 
         """ 3 saattaa aiheuttaa parsimisongelmia """
         startInd = ind + len(vko) + 3
@@ -93,6 +103,7 @@ class sivu():
         if string[-1] != "." and string[-1] != " ":
             string += "."
 
+
         exist = True
         try:
             negsubind = string.index("-") - 1
@@ -100,15 +111,35 @@ class sivu():
         except ValueError:
             exist = False
 
+        if string.count(" ") == 2:
+            spaceInd = string.index(" ")
+            # print(string)
+
+            string = string[0:spaceInd] + string[spaceInd+1:]
+            string = string.replace(" ", "-")
+
+        elif string.count(" ") == 1:
+            spaceInd = string.index(" ")
+            string = string.replace(string[spaceInd], "-")
+
         if exist:
             if string[negsubind] == ".":
                 string = string.replace("-","")
             if string[possubind] == ".":
                 string = string.replace("-","")
+            if string[negsubind] == " ":
+                string = string.replace("-","")
+                string = string.replace(" ","")
+            if string[possubind] == " ":
+                string = string.replace("-","")
+                string = string.replace(" ","")
             else:
                 string = string.replace("-",".")
 
-        string = string.split(".")
+        if string.count("-") == 1:
+            string = string.replace("-", ".")
+
+        string = string.split(".")      # Muuttaa 'string'-muuttujan listaksi
         string.append(self.sivuIndex+1)
 
         try:
@@ -117,20 +148,29 @@ class sivu():
         except IndexError:
             string.append(False)
 
-        if not exist:
-            del(string[-1])
-            string.append(None)
-            for i in range(2):
-                string[i] = int(string[i])
 
-        if not string[-1] == None:
-            if string[-1]:
-                for i in range(4):
-                    string[i] = int(string[i])
-            else:
-                for i in range(3):
-                    string[i] = int(string[i])
 
+        for index, i in enumerate(string):
+            try:
+                if type(i) is str and len(i) <= 3:
+                    string[index] = int(i)
+            except:
+                pass
+
+        # if not exist:
+        #     del(string[-1])
+        #     string.append(None)
+        #     for i in range(2):
+        #         string[i] = int(string[i])
+        #
+        # if not string[-1] == None:
+        #     if string[-1]:
+        #         for i in range(4):
+        #             string[i] = int(string[i])
+        #     else:
+        #         for i in range(3):
+        #             string[i] = int(string[i])
+        #
         return string
 
 class PDFFetcher():
