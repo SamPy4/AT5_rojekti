@@ -313,16 +313,106 @@ body {
   color: #bfbfbf;
 }
 
-#next_week {
+/* Seuraava viikko nappi ja sen aniamaatio */
+.next_week_but {
+  position: fixed;
+  top: 300px;
+  left: 190px;
+
+  display: inline-block;
+  border-radius: 0px;
+  background-color: #2e4262;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 7px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.next_week_but span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.next_week_but span:after {
+  content: '\25b6';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.next_week_but:hover span {
+  padding-right: 25px;
+}
+
+.next_week_but:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* #next_week {
   position: fixed;
   top: 300px;
   left: 150px;
   color: #bfbfbf;
+} */
+
+/* Edellinen viikko nappi ja sen animaatio */
+
+.prev_week_but {
+  position: fixed;
+  top: 300px;
+  left: 20px;
+
+  display: inline-block;
+  border-radius: 0px;
+  background-color: #2e4262;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 6.25px;
+  width: 165px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
 
-#prev_week {
+.prev_week_but span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.prev_week_but span:after {
+  content: '\25c0';
+  position: relative;
+  opacity: 0;
+  top: 50;
+  right: 132px;
+  transition: 0.5s;
+}
+
+.prev_week_but:hover span {
+  padding-left: 25px;
+}
+
+.prev_week_but:hover span:after {
+  opacity: 1;
+  right: -20;
+
+/* #prev_week {
   position: fixed;
   top: 300px;
   left: 20px;
   color: #bfbfbf;
-}
+} */
