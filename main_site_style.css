@@ -101,11 +101,11 @@ body {
 /* ENSIMMÄINEN PÄIVÄ */
 #days_bg h1 {        /* Määritellään päivätekstin takana olevan neliön ulkonäkö */
   position:fixed;
-  top:20px;
+  top:  65px;
   left: 20px;
   border: solid black 1px;
   width: 45px;
-  height: 25px;
+  height: 20px;
   /* border-radius: 10px; */
   font-size: 15px;
   /* top: 20px; */
@@ -116,7 +116,7 @@ body {
 }
 #days h1 {      /* Määritellään päivätekstin ulkonäkö */
   position:fixed;
-  top:  35px;
+  top:  80px;
   left: 32px;
   font-size: 32px;
   z-index: 1;
@@ -124,7 +124,7 @@ body {
 
 #content p1 {     /* Määritellään päivän ruoka teksti ja sen taustan ulkonäkö */
   position:fixed;
-  top: 85px;
+  top: 125px;
   left:20px;
   border: solid black 2px;
   width: 125px;
@@ -136,7 +136,7 @@ body {
 
 #pvm_texts p1 {    /* Määritellään päivämäätekstin paikka ja ulkonäkö */
   position: fixed;
-  top: 65px;
+  top: 105px;
   left: 100px;
   color: #bfbfbf;
 }
@@ -144,11 +144,11 @@ body {
 /* TOINEN PÄIVÄ */
 #days_bg h2 {        /* Määritellään päivätekstin takana olevan neliön ulkonäkö */
   position:fixed;
-  top:  20px;
+  top:  65px;
   left: 200px;
   border: solid black 1px;
   width: 45px;
-  height: 25px;
+  height: 20px;
   /* border-radius: 10px; */
   font-size: 15px;
   /* top: 20px; */
@@ -159,7 +159,7 @@ body {
 }
 #days h2 {      /* Määritellään päivätekstin ulkonäkö */
   position:fixed;
-  top:  35px;
+  top:  80px;
   left: 212px;
   font-size: 32px;
   z-index: 1;
@@ -167,7 +167,7 @@ body {
 
 #content p2 {
   position:fixed;
-  top:  85px;
+  top: 125px;
   left: 200px;
   border: solid black 2px;
   width: 125px;
@@ -179,7 +179,7 @@ body {
 
 #pvm_texts p2 {    /* Määritellään päivämäätekstin paikka ja ulkonäkö */
   position: fixed;
-  top: 65px;
+  top: 105px;
   left: 280px;
   color: #bfbfbf;
 }
@@ -187,11 +187,11 @@ body {
 /* KOLMAS PÄIVÄ */
 #days_bg h3 {        /* Määritellään päivätekstin takana olevan neliön ulkonäkö */
   position:fixed;
-  top:  20px;
+  top:  65px;
   left: 375px;
   border: solid black 1px;
   width: 45px;
-  height: 25px;
+  height: 20px;
   /* border-radius: 10px; */
   font-size: 15px;
   /* top: 20px; */
@@ -202,7 +202,7 @@ body {
 }
 #days h3 {      /* Määritellään päivätekstin ulkonäkö */
   position:fixed;
-  top:  35px;
+  top:  80px;
   left: 387px;
   font-size: 32px;
   z-index: 1;
@@ -210,7 +210,7 @@ body {
 
 #content p3 {
   position:fixed;
-  top:  85px;
+  top: 125px;
   left: 375px;
   border: solid black 2px;
   width: 125px;
@@ -222,7 +222,7 @@ body {
 
 #pvm_texts p3 {    /* Määritellään päivämäätekstin paikka ja ulkonäkö */
   position: fixed;
-  top: 65px;
+  top: 105px;
   left: 455px;
   color: #bfbfbf;
 }
@@ -230,11 +230,11 @@ body {
 /* NELJÄS PÄIVÄ */
 #days_bg h4 {        /* Määritellään päivätekstin takana olevan neliön ulkonäkö */
   position:fixed;
-  top:  20px;
+  top:  65px;
   left: 550px;
   border: solid black 1px;
   width: 45px;
-  height: 25px;
+  height: 20px;
   /* border-radius: 10px; */
   font-size: 15px;
   /* top: 20px; */
@@ -245,7 +245,7 @@ body {
 }
 #days h4 {      /* Määritellään päivätekstin ulkonäkö */
   position:fixed;
-  top:  35px;
+  top:  80px;
   left: 562Px;
   font-size: 32px;
   z-index: 1;
@@ -253,7 +253,7 @@ body {
 
 #content p4 {
   position:fixed;
-  top:  85px;
+  top: 125px;
   left: 550px;
   border: solid black 2px;
   width: 125px;
@@ -265,7 +265,7 @@ body {
 
 #pvm_texts p4 {    /* Määritellään päivämäätekstin paikka ja ulkonäkö */
   position: fixed;
-  top: 65px;
+  top: 105px;
   left: 630px;
   color: #bfbfbf;
 }
@@ -273,11 +273,11 @@ body {
 /* VIIDES PÄIVÄ */
 #days_bg h5 {        /* Määritellään päivätekstin takana olevan neliön ulkonäkö */
   position:fixed;
-  top:  20px;
+  top:  65px;
   left: 725px;
   border: solid black 1px;
   width: 45px;
-  height: 25px;
+  height: 20px;
   /* border-radius: 10px; */
   font-size: 15px;
   /* top: 20px; */
@@ -288,7 +288,7 @@ body {
 }
 #days h5 {      /* Määritellään päivätekstin ulkonäkö */
   position:fixed;
-  top:  35px;
+  top:  80px;
   left: 740Px;
   font-size: 32px;
   z-index: 1;
@@ -296,7 +296,7 @@ body {
 
 #content p5 {
   position:fixed;
-  top:  85px;
+  top: 125px;
   left: 725px;
   border: solid black 2px;
   width: 125px;
@@ -308,7 +308,7 @@ body {
 
 #pvm_texts p5 {    /* Määritellään päivämäätekstin paikka ja ulkonäkö */
   position: fixed;
-  top: 65px;
+  top: 105px;
   left: 805px;
   color: #bfbfbf;
 }
@@ -316,8 +316,8 @@ body {
 /* Seuraava viikko nappi ja sen aniamaatio */
 .next_week_but {
   position: fixed;
-  top: 300px;
-  left: 190px;
+  top: 10px;
+  left: 350px;
 
   display: inline-block;
   border-radius: 0px;
@@ -341,12 +341,18 @@ body {
 }
 
 .next_week_but span:after {
-  content: '\25b6';
+  content: '\25b6';           /* Oikealle nuoli */
   position: absolute;
   opacity: 0;
   top: 0;
   right: -20px;
   transition: 0.5s;
+}
+
+.next_week_but:hover {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(64,255,64,0.25), 0 12px 50px 0 rgba(64,255,64,0.32);  /* Napin alle muodostuva varjo */
 }
 
 .next_week_but:hover span {
@@ -365,11 +371,63 @@ body {
   color: #bfbfbf;
 } */
 
+
+/* Tämän viikon nappi ja sen animaatio */
+.this_week_but {
+  position: fixed;
+  top: 10px;
+  left: 190px;
+
+  display: inline-block;
+  border-radius: 0px;
+  background-color: #2e4262;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 7px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.this_week_but span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.this_week_but span:after {
+  content: '';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 0px;
+  transition: 0.5s;
+}
+
+.this_week_but:hover {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(64,255,64,0.25), 0 12px 50px 0 rgba(64,255,64,0.32);  /* Napin alle muodostuva varjo */
+}
+
+.this_week_but:hover span {
+  padding-right: 0px;
+}
+
+.this_week_but:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 /* Edellinen viikko nappi ja sen animaatio */
 
 .prev_week_but {
   position: fixed;
-  top: 300px;
+  top: 10px;
   left: 20px;
 
   display: inline-block;
@@ -380,7 +438,7 @@ body {
   text-align: center;
   font-size: 16px;
   padding: 6.25px;
-  width: 165px;
+  width: 160px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -394,12 +452,18 @@ body {
 }
 
 .prev_week_but span:after {
-  content: '\25c0';
+  content: '\25c0';     /* Vasemmalle nuoli */
   position: relative;
   opacity: 0;
   top: 50;
   right: 132px;
   transition: 0.5s;
+}
+
+.prev_week_but:hover {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(64,255,64,0.25), 0 12px 50px 0 rgba(64,255,64,0.32);  /* Napin alle muodostuva varjo */
 }
 
 .prev_week_but:hover span {
@@ -409,10 +473,22 @@ body {
 .prev_week_but:hover span:after {
   opacity: 1;
   right: -20;
-
+}
 /* #prev_week {
   position: fixed;
   top: 300px;
   left: 20px;
   color: #bfbfbf;
 } */
+
+/* Etsintä osio */
+
+#search {
+  position: fixed;
+  top: 20px;
+  right: 500px;
+}
+
+#search_text {
+  color: white;
+}
