@@ -33,21 +33,9 @@
     $pvm_pe = $_POST['pvm_pe'];
   }
 
-  $today  = new DateTime();
-  $today->format('Y\\-m\\-d\\');
-
-  $date_b = new DateTime($pvm_ke);
-
-  // if (DateTime::createFromFormat("Y-m-d", date("Y-m-d")) == DateTime::createFromFormat("Y-m-d", "2017-12-26")) {
-  //   echo "NYT ON kyl";
-  // }
-
-
-
-
-  // Kokeillaan mikä päivä on ja asetetaan se vihreäksi. Menneet päivät harmaiksi ja tulevvat pysyvät ennallaan
-  
+  // For debuggin'
   // $today = date("Y-m-d", strtotime("2017-12-26"));
+
   $today = date("Y-m-d");
   if (date("Y-m-d", strtotime($pvm_ma)) == $today) {
     $what_style = "style_ma.css";
@@ -70,15 +58,7 @@
   elseif (date("Y-m-d", strtotime($pvm_ma)) > $today) {
     $what_style = "style_kaikki_tulossa.css";
   }
-  // echo $pvm_pe == $today;
-
-  $new_date = date_create($pvm_ma);
-  $today  = date_create(date("Y-m-d"));
-
-  $diff = date_diff($new_date, $today, True);
-  // echo $diff->format('%d');
-
-  // echo strtotime($pvm_ma) > date("Y-m-d");
+  
   list($ma_ruoka, $ti_ruoka, $ke_ruoka, $to_ruoka, $pe_ruoka) = get_ruoat($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe);
 
  ?>
@@ -87,7 +67,7 @@
  <html>
  <head>
    <title>LISTA</title>
-   <link rel="stylesheet" type="text/css" href="main_site_style.css">
+   <link rel="stylesheet" type="text/css" href="stylesheets\\main_site_style.css">
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
  </head>
  <body>
@@ -143,7 +123,7 @@
    </div>
 
    <div id="pvm_texts">
-     <link rel="stylesheet" type="text/css" href= <?php echo $what_style ?>>
+     <link rel="stylesheet" type="text/css" href= <?php echo "stylesheets\\".$what_style ?>>
      <p1>
        <?php echo $pvm_ma ?>
      </p1>
