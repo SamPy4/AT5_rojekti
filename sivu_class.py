@@ -1,7 +1,7 @@
 import PyPDF2#, fetch_pdf
 
 """ This module parses the vantti pdf file """
-# NOTE: ROW 84
+# NOTE: ROW 93
 
 class sivu():
     def __init__(self, sivuIndex):
