@@ -83,10 +83,10 @@ while x <= len(parsin)-1:
     #print(sivunPaivat)
     vDay = sivunPaivat[0]
 
-    if vMonth >= 12:
-        vYear = year
-    else:
+    if vMonth == 12 and vDay >= 30:
         vYear = year+1
+    else:
+        vYear = year
 
     if len(str(vDay)) == 1:
         vDay = "0" + str(vDay)
