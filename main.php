@@ -122,7 +122,7 @@
          <input type="hidden" name="pvm_to" value="<?php echo date('Y-m-d', strtotime($pvm_to. ' + 7 days')) ?> "/>
          <input type="hidden" name="pvm_pe" value="<?php echo date('Y-m-d', strtotime($pvm_pe. ' + 7 days')) ?> "/>
 
-         <input type="submit" value="Seuraava viikko" />
+         <button type="submit" class="next_week_but" /><span>Seuraava viikko</span> </button>
      </form>
    </div>
 
@@ -134,7 +134,7 @@
          <input type="hidden" name="pvm_to" value="<?php echo date('Y-m-d', strtotime($pvm_to. ' - 7 days')) ?> "/>
          <input type="hidden" name="pvm_pe" value="<?php echo date('Y-m-d', strtotime($pvm_pe. ' - 7 days')) ?> "/>
 
-         <input type="submit" name="laheta" value="Edellinen viikko" />
+         <button type="submit" class="prev_week_but" /><span>Edellinen viikko</span> </button>
      </form>
    </div>
 
