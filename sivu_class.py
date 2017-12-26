@@ -5,7 +5,7 @@ import PyPDF2#, fetch_pdf
 
 class sivu():
     def __init__(self, sivuIndex):
-        self.ruokaListaORG = open("ruokalista2.pdf", "rb")
+        self.ruokaListaORG = open("ruokalista.pdf", "rb")
         self.reader  = PyPDF2.PdfFileReader(self.ruokaListaORG)
         self.sivu  =  self.reader.getPage(sivuIndex)
 
