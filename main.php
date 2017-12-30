@@ -196,7 +196,7 @@
          <input type="hidden" name="pvm_to" value="<?php echo date('Y-m-d', strtotime($pvm_to. ' + 7 days')) ?> "/>
          <input type="hidden" name="pvm_pe" value="<?php echo date('Y-m-d', strtotime($pvm_pe. ' + 7 days')) ?> "/>
 
-         <button type="submit" class="next_week_but" /><span>Seuraava viikko</span> </button>
+         <button type="submit" title="[oikea nuolinäppäin]" class="next_week_but" /><span>Seuraava viikko</span> </button>
      </form>
    </div>
 
@@ -208,7 +208,7 @@
          <input type="hidden" name="pvm_to" value="<?php echo def_day("to") ?> "/>
          <input type="hidden" name="pvm_pe" value="<?php echo def_day("pe") ?> "/>
 
-         <button type="submit" class="this_week_but" /><span>Tänään</span> </button>
+         <button type="submit" title="[välilyönti]" class="this_week_but" /><span>Tänään</span> </button>
      </form>
    </div>
 
@@ -221,7 +221,7 @@
          <input type="hidden" name="pvm_to" value="<?php echo date('Y-m-d', strtotime($pvm_to. ' - 7 days')) ?> "/>
          <input type="hidden" name="pvm_pe" value="<?php echo date('Y-m-d', strtotime($pvm_pe. ' - 7 days')) ?> "/>
 
-         <button type="submit" class="prev_week_but" /><span>Edellinen viikko</span> </button>
+         <button type="submit" title="[vasen nuolinäppäin]" class="prev_week_but" /><span>Edellinen viikko</span> </button>
      </form>
    </div>
 
@@ -230,7 +230,7 @@
      </p1>
      <form name="search" action="main.php" method="post" id="search">
        <label id="search_text">Etsi ruokaa</label>
-       <input type="text" name="search_box" id="search_box" />
+       <input type="text" placeholder="esim. Kalapuikko" name="search_box" id="search_box" />
        <button type="submit" class="search_but" id="search_but" /><span>Etsi</span> </button>
      </form>
    </div>
@@ -241,7 +241,7 @@
        foreach ($loydetyt_paivat as $ruog) {
          $weekday = date("N", strtotime($ruog['pvm']));
          echo wd_int_to_str($weekday);
-         echo "\n";
+         echo ":\n";
          echo $ruog['pvm'];
          echo "<p>";
          echo "-------------------";
