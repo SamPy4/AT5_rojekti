@@ -58,7 +58,7 @@
   elseif (date("Y-m-d", strtotime($pvm_ma)) > $today) {
     $what_style = "style_kaikki_tulossa.css";
   }
-  
+
   list($ma_ruoka, $ti_ruoka, $ke_ruoka, $to_ruoka, $pe_ruoka) = get_ruoat($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe);
 
  ?>
@@ -195,13 +195,15 @@
      </form>
    </div>
 
-   <!-- <div>
+   <div>
+     <p1 id="search_text_bg">
+     </p1>
      <form name="search" action="main.php" method="post" id="search">
-       <label id="search_text">Etsi:</label>
-       <input type="text" name="search_box" />
-       <button type="submit" class="search_but" /><span>Etsi</span> </button>
+       <label id="search_text">Etsi ruokaa</label>
+       <input type="text" name="search_box" id="search_box" />
+       <button type="submit" class="search_but" id="search_but" /><span>Etsi</span> </button>
      </form>
-   </div> -->
+   </div>
 
  </body>
  </html>
