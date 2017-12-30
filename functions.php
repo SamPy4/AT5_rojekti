@@ -134,4 +134,23 @@ function def_day($day) {
   return "No day defined";
 
 }
+
+function wd_int_to_str($weekday_int) {
+  switch ($weekday_int) {
+    case 1:
+      return "MA";
+    case 2:
+      return "TI";
+    case 3:
+      return "KE";
+    case 4:
+      return "TO";
+    case 5:
+      return "PE";
+    case 6:
+      return "LA";
+    case 7:
+      return "SU";
+  }
+}
 ?>
