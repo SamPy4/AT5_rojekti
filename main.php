@@ -61,6 +61,36 @@
 
   list($ma_ruoka, $ti_ruoka, $ke_ruoka, $to_ruoka, $pe_ruoka) = get_ruoat($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe);
 
+  if(isset($_POST['search_box'])) {
+    if ($_POST['search_box'] == "VEG") {
+      $search = trim($_POST['search_box']);
+    }
+    else {
+      $search = strtolower(trim($_POST['search_box']));
+    }
+
+    if($search !== '' && $search !== ' ' && strlen($search) >= 3) {
+
+      $tulevat_paivat = def_tulevat_paivat();
+      $loydetyt_paivat = array();
+
+      foreach ($tulevat_paivat as $tmp_paiva) {
+        if ($search == "VEG") {
+          $pv_ruoka = $tmp_paiva['ruoka'];
+        }
+        else {
+          $pv_ruoka = strtolower(($tmp_paiva['ruoka']));
+        }
+
+        if (strpos($pv_ruoka, $search) == true) {
+          array_push($loydetyt_paivat, $tmp_paiva);
+        }
+      }
+
+      $result_amount = sizeof($loydetyt_paivat);
+    }
+ }
+
  ?>
 
  <!DOCTYPE html>
@@ -204,6 +234,30 @@
        <button type="submit" class="search_but" id="search_but" /><span>Etsi</span> </button>
      </form>
    </div>
+
+   <div id="search_results">
+     <?php
+     if (isset($loydetyt_paivat)) {
+       foreach ($loydetyt_paivat as $ruog) {
+         $weekday = date("N", strtotime($ruog['pvm']));
+         echo wd_int_to_str($weekday);
+         echo "\n";
+         echo $ruog['pvm'];
+         echo "<p>";
+         echo "-------------------";
+         echo "</p>";
+       }
+    }
+     ?>
+   </div>
+   <div id="result_amount">
+     <?php
+     if(isset($result_amount)) {
+       echo "Hakutuloksia: ".$result_amount;
+     }
+     ?>
+   </div>
+
 
  </body>
  </html>
