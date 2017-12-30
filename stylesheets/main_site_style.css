@@ -485,10 +485,40 @@ body {
 
 #search {
   position: fixed;
-  top: 20px;
-  right: 500px;
+  top: 40px;
+  right: 100px;
+}
+
+#search_box {
+  color: white;
+  background-color: #212f44;
+  position: fixed;
+  top: 40px;
+  right: 140px;
+}
+
+#search_but {
+  position: fixed;
+  top: 40px;
+  right: 90px;
 }
 
 #search_text {
   color: white;
+  position: fixed;
+  top: 20px;
+  right: 175px;
+  z-index: 1;
+}
+
+#search_text_bg {
+  background-color: #2e4262;
+  position: fixed;
+  top: 17px;
+  right: 169px;
+
+  border: solid black 1px;
+  width: 85px;
+  height: 20px;
+  z-index: 0;
 }
