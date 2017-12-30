@@ -1,11 +1,11 @@
 import PyPDF2#, fetch_pdf
+import inspect
 
 """ This module parses the vantti pdf file """
-# NOTE: ROW 93
 
 class sivu():
     def __init__(self, sivuIndex):
-        self.ruokaListaORG = open("ruokalista.pdf", "rb")
+        self.ruokaListaORG = open("ruokalista2.pdf", "rb")
         self.reader  = PyPDF2.PdfFileReader(self.ruokaListaORG)
         self.sivu  =  self.reader.getPage(sivuIndex)
 
@@ -68,30 +68,34 @@ class sivu():
 
 
     def getSivunPaivat(self):
-        ind = 0
+        ind = ""
         string = ""
-        vko = ""
         text = self.sivunSisalto
 
-        for i in range(53):
-            finding = "VK {}".format(str(i))
-            try:
-                ind = text.index(finding)
-                vko = str(i)
-            except:
-                pass
+        try:
+            text.index("VK")
+        except ValueError:
+            print("ValueError:", "VK not found for var 'vko'\nRow", inspect.getlineno(inspect.currentframe()))
+            exit()
+        except:
+            raise
 
-        if ind == 0:
-            for i in range(53):
-                finding = "VK"
+        ind = text[text.index("VK"):text.index("VK")+10]
+
+        y = 0
+        for i, c in enumerate(ind):
+            try:
+                int(c)
+                y=i
                 try:
-                    ind = text.index(finding)
-                    vko = "213"
+                    int(ind[i+1])
+                    y=i+1
                 except:
                     pass
+            except:
+                continue
 
-        """ 3 saattaa aiheuttaa parsimisongelmia """
-        startInd = ind + len(vko) + 3
+        startInd = text.index("VK") + y
         lastInd = text.index("LOUNAS")
 
         for i in range(startInd, lastInd):
@@ -173,13 +177,29 @@ class sivu():
         #
         return string
 
+    def debug(self):
+        num = self.sivunSisalto[self.sivunSisalto.index("VK"):self.sivunSisalto.index("VK")+6].replace("VK", "")
+        num = num.strip()
+        if "\n" in num:
+            num = num.replace("\n", "")
+        if " " in num:
+            num = num.replace(" ", "")
+        print("Numero", len(num))
+        return
+
+
+
 class PDFFetcher():
     def fetch():
         fetch_pdf.fetch()
         return
 
 if __name__ == "__main__":
+    # test = sivu(0)
+    # text = test.debug()
+
     for i in range(7):
         test = sivu(i)
         text = test.getSivunPaivat()
+        # test.debug()
         print("Main:", text)
