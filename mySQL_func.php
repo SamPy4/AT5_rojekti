@@ -41,4 +41,23 @@
     $ruoat = array($ma_ruoka, $ti_ruoka, $ke_ruoka, $to_ruoka, $pe_ruoka);
     return $ruoat;
   }
+
+  function def_tulevat_paivat() {
+    $link = connect();
+
+    $query  = "SELECT * FROM ruoka WHERE pvm >= CURDATE()";
+    $result = mysqli_query($link, $query);
+
+    $tulevat_paivat = array();
+
+    while ($row = mysqli_fetch_array($result)) {
+      array_push($tulevat_paivat, $row);
+    }
+
+    // foreach($tulevat_paivat as $tmp) {
+    //   echo "\n".$tmp['pvm'];
+    // }
+
+    return $tulevat_paivat;
+  }
  ?>
