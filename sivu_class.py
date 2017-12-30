@@ -2,10 +2,11 @@ import PyPDF2#, fetch_pdf
 import inspect
 
 """ This module parses the vantti pdf file """
+# NOTE: ROW 97
 
 class sivu():
     def __init__(self, sivuIndex):
-        self.ruokaListaORG = open("ruokalista2.pdf", "rb")
+        self.ruokaListaORG = open("ruokalista.pdf", "rb")
         self.reader  = PyPDF2.PdfFileReader(self.ruokaListaORG)
         self.sivu  =  self.reader.getPage(sivuIndex)
 
@@ -94,8 +95,8 @@ class sivu():
                     pass
             except:
                 continue
-
-        startInd = text.index("VK") + y
+        # 1 saattaa aiheuttaa parsimisongelmia... ööööh jjjuuu
+        startInd = text.index("VK") + y-1
         lastInd = text.index("LOUNAS")
 
         for i in range(startInd, lastInd):
