@@ -98,6 +98,63 @@ body {
   background: #2c2f33;
 }
 
+#headline {
+  position: fixed;
+  top: 5px;
+  left: 540px;
+  font-size: 28px;
+  color: white;
+  border: solid black 3px
+}
+
+#info_bottom {
+  position: fixed;
+  text-align: center;
+  left:    540px;
+  bottom:  10px;
+}
+
+#info_toggle_but {
+  position: fixed;
+  top: 40px;
+  right: 500px;
+  background-color: #5e71b5;
+}
+
+#help_win {
+  color: black;
+
+  position: fixed;
+  top: 60px;
+  right: 195px;
+
+  display: none;
+  text-align: center;
+  line-height: 24px;
+  border: solid black 1px;
+
+  /* width: 500px; */
+  /* height: 200px; */
+
+  /* border-radius: 10px; */
+  font-size: 15px;
+  /* top: 20px; */
+  margin-top: 2px;
+  background: #d6dfff;
+  padding: 1px;
+  z-index: 1;
+}
+#help_win h1 {
+  line-height: 45px;
+  font-size: 40px;
+  color: blue;
+}
+
+#help_win h7 {
+  line-height: 45px;
+  background-color: blue;
+}
+
 /* ENSIMMÄINEN PÄIVÄ */
 #days_bg h1 {        /* Määritellään päivätekstin takana olevan neliön ulkonäkö */
   position:fixed;
