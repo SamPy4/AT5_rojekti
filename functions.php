@@ -183,8 +183,8 @@ function week_by_day($result_pvm) {
      $pvms = array($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe);
      return $pvms;
    case 4:
-     $pvm_ma = date('Y-m-d', strtotime($result_pvm. ' -4 day'));
-     $pvm_ti = date('Y-m-d', strtotime($result_pvm. ' -3 day'));
+     $pvm_ma = date('Y-m-d', strtotime($result_pvm. ' -3 day'));
+     $pvm_ti = date('Y-m-d', strtotime($result_pvm. ' -2 day'));
      $pvm_ke = date('Y-m-d', strtotime($result_pvm. ' -1 day'));
      $pvm_to = $result_pvm;
      $pvm_pe = date('Y-m-d', strtotime($result_pvm. ' +1 day'));
