@@ -104,7 +104,8 @@ body {
   left: 540px;
   font-size: 28px;
   color: white;
-  border: solid black 3px
+  background-color: #000a30;
+  border: solid black 3px;
 }
 
 #info_bottom {
