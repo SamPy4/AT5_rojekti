@@ -11,6 +11,10 @@
 
   list($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe) = def_days();  // Luo viikonpäivä muuttujille päivämäärät
 
+  if (isset($_GET['result_pvm'])) {
+    list($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe) = week_by_day($_GET['result_pvm']);
+  }
+
   // $pvm_ma = '2018-01-01';
   // $pvm_ti = '2018-01-02';
   // $pvm_ke = '2018-01-03';
@@ -171,6 +175,9 @@
      </p5>
    </div>
    <script>
+    function submit_res_lnk() {
+      document.forms['results'].submit();
+    }
     document.onkeydown=function(evt){
         var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
         // alert(keyCode);
@@ -235,27 +242,42 @@
      </form>
    </div>
 
-   <div id="search_results">
-     <?php
-     if (isset($loydetyt_paivat)) {
-       foreach ($loydetyt_paivat as $ruog) {
-         $weekday = date("N", strtotime($ruog['pvm']));
-         echo wd_int_to_str($weekday);
-         echo ":\n";
-         echo $ruog['pvm'];
-         echo "<p>";
-         echo "-------------------";
-         echo "</p>";
-       }
-    }
-     ?>
-   </div>
    <div id="result_amount">
      <?php
+     echo "Hakutuloksia: ";
      if(isset($result_amount)) {
-       echo "Hakutuloksia: ".$result_amount;
+       echo $result_amount;
+     }
+     else {
+       echo "0";
      }
      ?>
+   </div>
+
+   <div id="search_results">
+     <form nane="results" action="main.php" method="post" id="results">
+       <?php
+       if (isset($loydetyt_paivat)) {
+         if (sizeof($loydetyt_paivat) == 0) {
+           echo "Ei tuloksia";
+         }
+         foreach ($loydetyt_paivat as $ruog) {
+           $weekday = date("N", strtotime($ruog['pvm']));
+           echo wd_int_to_str($weekday);
+           echo ":\n"; ?>
+           <a id="result_link"  href="main.php?result_pvm=<?php echo $ruog['pvm'] ?>" onclick="submit_res_lnk();"><?php echo $ruog['pvm'] ?></a>
+
+       <?php
+           echo "<p>";
+           echo "-------------------";
+           echo "</p>";
+         }
+      }
+    else {
+      echo "Ei tuloksia";
+    }
+       ?>
+    </form>
    </div>
 
 
