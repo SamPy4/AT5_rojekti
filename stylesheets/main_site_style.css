@@ -501,6 +501,8 @@ body {
   position: fixed;
   top: 40px;
   right: 90px;
+  color: white;
+  background-color: #03004f;
 }
 
 #search_text {
@@ -533,6 +535,9 @@ body {
   margin-top: 20px auto;
   background: #03004f;
   padding: 15px;
+}
+#result_link {
+  color: blue;
 }
 #result_amount {
   position: fixed;
