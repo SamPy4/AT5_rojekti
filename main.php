@@ -100,11 +100,14 @@
  <!DOCTYPE html>
  <html>
  <head>
-   <title>LISTA</title>
+   <title>Koulujen ruokalista <?php echo date('Y') ?></title>
    <link rel="stylesheet" type="text/css" href="stylesheets\\main_site_style.css">
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
  </head>
  <body>
+   <div id="headline">
+     <h1>VANTTI-ruokalistan käyttöliittymä</h1>
+   </div>
    <div id="days">
        <h1>
          <?php echo "MA" ?>
@@ -174,27 +177,7 @@
        <?php echo $pvm_pe ?>
      </p5>
    </div>
-   <script>
-    function submit_res_lnk() {
-      document.forms['results'].submit();
-    }
-    document.onkeydown=function(evt){
-        var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
-        // alert(keyCode);
 
-        if(keyCode === 39) {
-            document.next_week.submit();
-        }
-
-        if(keyCode === 32) {
-            document.this_week.submit();
-        }
-
-        if(keyCode === 37) {
-            document.prev_week.submit();
-        }
-    }
-  </script>
    <div>
      <form name="next_week" action="main.php" method="post" id="next_week">
          <input type="hidden" name="pvm_ma" value="<?php echo date('Y-m-d', strtotime($pvm_ma. ' + 7 days')) ?> "/>
@@ -280,6 +263,90 @@
     </form>
    </div>
 
+   <div id="info_bottom">
+     <p>AT5-kurssin projektityö</p>
+     <p>Sami Porio git:SamPy4</p>
+     <p>©2017</p>
+   </div>
+
+   <div id="help_info">
+     <input type="button" id="info_toggle_but" onclick="toggle_info_win()" value= '¿Ohje?' />
+     <div id="help_win">
+       <h1> Ohje/Info </h1>
+       <h2>Vantin julkaiseman ruokalistan pohjalta tehty kätevä käyttöliittymä</h2>
+       <h3>Tämän sivun sisältämät ruokatiedot koskevat ala-asteita, yläkouluja, lukioita ja ammattioppilaitoksia</h3>
+       <h4>joihin VANTTI tarjoaa ruoat</h4>
+       <h5> Sivustolta voi etsiä tulevia ruokia ja selata viikottain tulevia tai menneitä ruokia</h5>
+       <h6> Kaikki päivämäärät ovat formaatissa vuosi-kuukausi-päivä </h6>
+       <h7><button id="info_close_but" onclick="close_info_win();">Sulje</button></h7>
+     </div>
+   </div>
+
+   <!-- JavaScript section -->
+   <script>
+
+    function submit_res_lnk() {
+      document.forms['results'].submit();
+    }
+
+    var tog_state = 0;
+
+    function toggle_info_win() {
+      if(tog_state == 0) {
+        document.getElementById('help_win').style.display = "block";
+        document.getElementById('info_toggle_but').value = "Sulje";
+        tog_state = 1;
+        return;
+      }
+      if(tog_state == 1) {
+        document.getElementById('help_win').style.display = "none";
+        document.getElementById('info_toggle_but').value = "¿Ohje?";
+        tog_state = 0;
+        return;
+      }
+    }
+
+    function close_info_win() {
+      if(tog_state == 1) {
+        document.getElementById('help_win').style.display = "none";
+        tog_state = 0;
+        return;
+      }
+
+    function info_but_text() {
+      if(tog_state == 0) {
+        return "¿Ohje?";
+      }
+      if(tog_state == 1) {
+        return "Sulje";
+      }
+    }
+    }
+    // alert(event.click);
+    // document.event.clientX=function() {
+    //   if(tog_state == 1) {
+    //     toggle_info_win();
+    //     return;
+    //   }
+    // }
+
+    document.onkeydown=function(evt){
+        var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+        // alert(keyCode);
+
+        if(keyCode === 39) {
+            document.next_week.submit();
+        }
+
+        if(keyCode === 32) {
+            document.this_week.submit();
+        }
+
+        if(keyCode === 37) {
+            document.prev_week.submit();
+        }
+    }
+   </script>
 
  </body>
  </html>
