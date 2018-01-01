@@ -38,7 +38,7 @@
   }
 
   // For debuggin'
-  // $today = date("Y-m-d", strtotime("2017-12-26"));
+  // $today = date("Y-m-d", strtotime("2018-01-05"));
 
   $today = date("Y-m-d");
   if (date("Y-m-d", strtotime($pvm_ma)) == $today) {
@@ -274,7 +274,7 @@
      <div id="help_win">
        <h1> Ohje/Info </h1>
        <h2>Vantin julkaiseman ruokalistan pohjalta tehty kätevä käyttöliittymä</h2>
-       <h3>Tämän sivun sisältämät ruokatiedot koskevat ala-asteita, yläkouluja, lukioita ja ammattioppilaitoksia</h3>
+       <h3>Tämän sivun sisältämät ruokatiedot koskevat yläkouluja, lukioita ja ammattioppilaitoksia</h3>
        <h4>joihin VANTTI tarjoaa ruoat</h4>
        <h5> Sivustolta voit etsiä tulevia ruokia ja selata viikottain tulevia tai menneitä ruokia</h5>
        <h6> Kaikki päivämäärät ovat formaatissa vuosi-kuukausi-päivä </h6>
