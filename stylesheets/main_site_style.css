@@ -127,7 +127,7 @@ body {
 
   position: fixed;
   top: 60px;
-  right: 195px;
+  right: 237px;
 
   display: none;
   text-align: center;
@@ -151,10 +151,19 @@ body {
   color: blue;
 }
 
-#help_win h7 {
+/* #help_win h4 {
+  position: fixed;
+  top: 280px;
+  right: 510px;
+  z-index: 0;
+}                       Sulje nappula otettu pois käytöstä
+#info_close_but {
   line-height: 45px;
   background-color: blue;
-}
+  text-align: center;
+  width: 50px;
+  height: 25px;
+} */
 
 /* ENSIMMÄINEN PÄIVÄ */
 #days_bg h1 {        /* Määritellään päivätekstin takana olevan neliön ulkonäkö */
@@ -595,7 +604,7 @@ body {
   padding: 15px;
 }
 #result_link {
-  color: blue;
+  color: lightblue;
 }
 #result_amount {
   position: fixed;
