@@ -273,12 +273,17 @@
      <input type="button" id="info_toggle_but" onclick="toggle_info_win()" value= '¿Ohje?' />
      <div id="help_win">
        <h1> Ohje/Info </h1>
-       <h2>Vantin julkaiseman ruokalistan pohjalta tehty kätevä käyttöliittymä</h2>
-       <h3>Tämän sivun sisältämät ruokatiedot koskevat yläkouluja, lukioita ja ammattioppilaitoksia</h3>
-       <h4>joihin VANTTI tarjoaa ruoat</h4>
-       <h5> Sivustolta voit etsiä tulevia ruokia ja selata viikottain tulevia tai menneitä ruokia</h5>
-       <h6> Kaikki päivämäärät ovat formaatissa vuosi-kuukausi-päivä </h6>
-       <h7><button id="info_close_but" onclick="close_info_win();">Sulje</button></h7>
+       <h2>
+       <p>Vantin julkaiseman ruokalistan pohjalta tehty kätevä käyttöliittymä</p>
+       <p>Tämän sivun sisältämät ruokatiedot koskevat yläkouluja, lukioita ja ammattioppilaitoksia</p>
+       <p>joihin VANTTI tarjoaa ruoat</p>
+       <p>Sivustolta voit etsiä tulevia ruokia ja selata viikottain tulevia tai menneitä ruokia</p>
+       <p>Kaikki päivämäärät ovat formaatissa vuosi-kuukausi-päivä</p>
+       <p>Hakutulokset ovat linkkejä joita painamalla pääsee viikolle</p>
+       <p>joka sisältää valitun päivän</p>
+       </h2>
+       <!-- <h3><button id="info_close_but" onclick="close_info_win();"></button></h3>
+       <h4>Sulje</h4> -->
      </div>
    </div>
 
@@ -345,6 +350,10 @@
         if(keyCode === 37) {
             document.prev_week.submit();
         }
+        if(keyCode === 79) {
+            toggle_info_win();
+        }
+
     }
    </script>
 
