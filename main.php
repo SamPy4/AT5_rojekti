@@ -326,14 +326,6 @@
         return "Sulje";
       }
     }
-    }
-    // alert(event.click);
-    // document.event.clientX=function() {
-    //   if(tog_state == 1) {
-    //     toggle_info_win();
-    //     return;
-    //   }
-    // }
 
     document.onkeydown=function(evt){
         var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
@@ -350,9 +342,9 @@
         if(keyCode === 37) {
             document.prev_week.submit();
         }
-        if(keyCode === 79) {
-            toggle_info_win();
-        }
+        // if(keyCode === 79) {
+        //     toggle_info_win();
+        // }
 
     }
    </script>
