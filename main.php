@@ -317,6 +317,7 @@
         tog_state = 0;
         return;
       }
+   }
 
     function info_but_text() {
       if(tog_state == 0) {
