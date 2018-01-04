@@ -111,14 +111,18 @@ body {
 #info_bottom {
   position: fixed;
   text-align: center;
-  left:    540px;
-  bottom:  10px;
+  /* left:   540px;
+  bottom:  10px; */
+  top: 92%;
+  left: 50%;
+  /* margin-top: -90px; */
+  margin-left: -100px;
 }
 
 #info_toggle_but {
   position: fixed;
   top: 40px;
-  right: 500px;
+  left: 750px;
   background-color: #5e71b5;
 }
 
