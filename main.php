@@ -65,6 +65,8 @@
 
   list($ma_ruoka, $ti_ruoka, $ke_ruoka, $to_ruoka, $pe_ruoka) = get_ruoat($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe);
 
+
+  // SEARCH PROTOCOL
   if(isset($_POST['search_box'])) {
     if ($_POST['search_box'] == "VEG") {
       $search = trim($_POST['search_box']);
@@ -75,7 +77,7 @@
 
     if($search !== '' && $search !== ' ' && strlen($search) >= 3) {
 
-      $tulevat_paivat = def_tulevat_paivat();
+      $tulevat_paivat  = def_tulevat_paivat();    // Functio kutsutaan mySQL_func.php filusta
       $loydetyt_paivat = array();
 
       foreach ($tulevat_paivat as $tmp_paiva) {
@@ -220,7 +222,7 @@
      </p1>
      <form name="search" action="main.php" method="post" id="search">
        <label id="search_text">Etsi ruokaa</label>
-       <input type="text" placeholder="esim. Kalapuikko" name="search_box" id="search_box" />
+       <input type="text" placeholder="esim. Peruna" name="search_box" id="search_box" />
        <button type="submit" class="search_but" id="search_but" /><span>Etsi</span> </button>
      </form>
    </div>
