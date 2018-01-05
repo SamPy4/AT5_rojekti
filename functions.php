@@ -96,10 +96,10 @@ function def_day($day) {
     $pvm_pe = date('Y-m-d', strtotime(' +1 day'));
   }
   elseif (date('N') == 5) {
-    $pvm_ma = date('Y-m-d', strtotime(' -3 day'));
-    $pvm_ti = date('Y-m-d', strtotime(' -2 day'));
-    $pvm_ke = date('Y-m-d', strtotime(' -1 day'));
-    $pvm_to = date('Y-m-d', strtotime(' +1 day'));
+    $pvm_ma = date('Y-m-d', strtotime(' -4 day'));
+    $pvm_ti = date('Y-m-d', strtotime(' -3 day'));
+    $pvm_ke = date('Y-m-d', strtotime(' -2 day'));
+    $pvm_to = date('Y-m-d', strtotime(' -1 day'));
     $pvm_pe = date('Y-m-d');
   }
   elseif (date('N') == 6) {
