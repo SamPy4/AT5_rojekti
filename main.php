@@ -276,13 +276,13 @@
      <div id="help_win">
        <h1> Ohje/Info </h1>
        <h2>
-       <p>Vantin julkaiseman ruokalistan pohjalta tehty kätevä käyttöliittymä</p>
+       <p>Vantin julkaiseman ruokalistan pohjalta tehty kätevä käyttöliittymä.</p>
        <p>Tämän sivun sisältämät ruokatiedot koskevat yläkouluja, lukioita ja ammattioppilaitoksia</p>
-       <p>joihin VANTTI tarjoaa ruoat</p>
-       <p>Sivustolta voit etsiä tulevia ruokia ja selata viikottain tulevia tai menneitä ruokia</p>
-       <p>Kaikki päivämäärät ovat formaatissa vuosi-kuukausi-päivä</p>
+       <p>joihin VANTTI tarjoaa ruoat.</p>
+       <p>Sivustolta voit etsiä tulevia ruokia ja selata viikottain tulevia tai menneitä ruokia.</p>
+       <p>Kaikki päivämäärät ovat formaatissa vuosi-kuukausi-päivä.</p>
        <p>Hakutulokset ovat linkkejä joita painamalla pääsee viikolle</p>
-       <p>joka sisältää valitun päivän</p>
+       <p>joka sisältää valitun päivän.</p>
        </h2>
        <!-- <h3><button id="info_close_but" onclick="close_info_win();"></button></h3>
        <h4>Sulje</h4> -->
