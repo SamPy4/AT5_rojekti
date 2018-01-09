@@ -131,7 +131,7 @@ function def_day($day) {
   if ($day == "pe") {
     return $pvm_pe;
   }
-  return "No day defined";
+  return "No day defined : functions.php.def_day(day)";
 
 }
 
@@ -152,6 +152,7 @@ function wd_int_to_str($weekday_int) {
     case 7:
       return "SU";
   }
+  return "Error in input functions.php.wd_int_to_str(weekday_int)";
 }
 
 function week_by_day($result_pvm) {
@@ -200,7 +201,8 @@ function week_by_day($result_pvm) {
      return $pvms;
   }
 
-  $pvms = array($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe);
-  return $pvms;
+  return "ValueError in functions.php.week_by_day(result_pvm)";
+  // $pvms = array($pvm_ma, $pvm_ti, $pvm_ke, $pvm_to, $pvm_pe);
+  // return $pvms;
 }
 ?>
